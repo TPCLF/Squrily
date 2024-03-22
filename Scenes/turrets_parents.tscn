@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbl4qnc0po8na"]
+
+[ext_resource type="Texture2D" uid="uid://bvd67snb4ecb3" path="res://Assets/Blocks/32.png" id="1_2unhv"]
+[ext_resource type="Script" path="res://Scripts/Turret.gd" id="2_rqqtv"]
+[ext_resource type="Texture2D" uid="uid://b7ky35brj5yqp" path="res://Assets/Blocks/1.png" id="3_8mmrt"]
+[ext_resource type="Texture2D" uid="uid://dpdpgh4j2oxhy" path="res://Assets/icon.svg" id="3_b4e5w"]
+[ext_resource type="Texture2D" uid="uid://bs3w03jptaq3s" path="res://Assets/Blocks/3.png" id="4_fwf66"]
+[ext_resource type="Texture2D" uid="uid://jxhcbxrd8347" path="res://Assets/Blocks/4.png" id="5_yc4x1"]
+[ext_resource type="Texture2D" uid="uid://cbibnkghr2rc8" path="res://Assets/Blocks/5.png" id="6_qty0g"]
+[ext_resource type="Texture2D" uid="uid://b50wu3hkaeyhq" path="res://Assets/Blocks/2.png" id="7_vj0xb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cykr"]
+size = Vector2(128, 126.721)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k401r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8mmrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fwf66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yc4x1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qty0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vj0xb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="TurretsParents" type="Node2D"]
+
+[node name="Turret" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_2unhv")
+script = ExtResource("2_rqqtv")
+
+[node name="Projectile" type="Sprite2D" parent="Turret"]
+position = Vector2(-1.37091e-06, -8.34465e-07)
+scale = Vector2(0.25, 0.252525)
+texture = ExtResource("3_b4e5w")
+
+[node name="Area2D" type="Area2D" parent="Turret/Projectile"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turret/Projectile/Area2D"]
+position = Vector2(5.48364e-06, 3.30448e-06)
+shape = SubResource("RectangleShape2D_4cykr")
+
+[node name="Gun" type="AnimatedSprite2D" parent="Turret"]
+position = Vector2(-1.37091e-06, -8.34465e-07)
+scale = Vector2(0.25, 0.252525)
+sprite_frames = SubResource("SpriteFrames_k401r")
+autoplay = "default"
+frame_progress = 0.869587
+
+[node name="Timer" type="Timer" parent="Turret"]
+process_callback = 0
+autostart = true

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bonqhx4wpn28p"]
+
+[ext_resource type="Texture2D" uid="uid://ckcdx08uxyifa" path="res://Assets/Blocks/WALLNUT.png" id="1_odsku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24xcp"]
+size = Vector2(128, 128.07)
+
+[node name="Blk" type="RigidBody2D"]
+z_index = -1
+disable_mode = 1
+collision_layer = 256
+collision_mask = 269
+constant_torque = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.12195, 3.28205)
+texture = ExtResource("1_odsku")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.0353533)
+scale = Vector2(1, 0.998904)
+shape = SubResource("RectangleShape2D_24xcp")

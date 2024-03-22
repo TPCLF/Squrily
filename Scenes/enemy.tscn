@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://ceye23kao6v60"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_48ftl"]
+[ext_resource type="Texture2D" uid="uid://b4dwx2nfgxoph" path="res://Assets/Enemies/5.PNG" id="2_101nh"]
+[ext_resource type="Texture2D" uid="uid://bxitfrag3ute3" path="res://Assets/Enemies/1.PNG" id="3_wdi6k"]
+[ext_resource type="Texture2D" uid="uid://d2cly5kaf0tys" path="res://Assets/Enemies/2.PNG" id="4_mtqg5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iiqk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_101nh")
+}],
+"loop": false,
+"name": &"Squished",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wdi6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mtqg5")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n4b8"]
+size = Vector2(29, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj3aq"]
+size = Vector2(27, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p18l7"]
+size = Vector2(4, 33)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 12
+collision_mask = 265
+script = ExtResource("1_48ftl")
+
+[node name="JUAN" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_iiqk8")
+animation = &"Squished"
+autoplay = "Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 2)
+shape = SubResource("RectangleShape2D_5n4b8")
+
+[node name="floorCheck" type="RayCast2D" parent="."]
+target_position = Vector2(0, 33)
+collision_mask = 8
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(2.5, -22)
+shape = SubResource("RectangleShape2D_vj3aq")
+
+[node name="Attack" type="Area2D" parent="."]
+
+[node name="AttackPlayer" type="CollisionShape2D" parent="Attack"]
+position = Vector2(20, 3)
+shape = SubResource("RectangleShape2D_p18l7")
+
+[node name="AttackPlayer2" type="CollisionShape2D" parent="Attack"]
+position = Vector2(-15, 3.5)
+shape = SubResource("RectangleShape2D_p18l7")
+
+[connection signal="animation_finished" from="JUAN" to="." method="_on_juan_animation_finished"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]

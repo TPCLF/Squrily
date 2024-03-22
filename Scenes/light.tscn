@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8af7pvyk5t81"]
+
+[ext_resource type="Texture2D" uid="uid://dipn6bjnfxf45" path="res://Assets/light.png" id="1_0s68m"]
+[ext_resource type="Texture2D" uid="uid://b4t74dpl86jwn" path="res://Assets/Light1.png" id="2_pjyiq"]
+
+[node name="Light" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(9, 5)
+texture = ExtResource("1_0s68m")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.25098)
+z_index = 1
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("2_pjyiq")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 5)
+texture = ExtResource("2_pjyiq")

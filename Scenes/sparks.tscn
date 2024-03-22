@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmxytr0hc0dpg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l2i3l"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eghkf"]
+lifetime_randomness = 0.26
+particle_flag_disable_z = true
+initial_velocity_max = 50.75
+gravity = Vector3(0, -98, 0)
+radial_accel_min = -1.4
+radial_accel_max = 48.34
+scale_min = 13.08
+scale_max = 13.08
+anim_offset_max = 0.6415
+sub_emitter_mode = 2
+sub_emitter_amount_at_end = 5
+
+[node name="Sparks" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+material = SubResource("CanvasItemMaterial_l2i3l")
+rotation = -1.5708
+scale = Vector2(10.1239, -10.2432)
+process_material = SubResource("ParticleProcessMaterial_eghkf")
+explosiveness = 0.5
+trail_enabled = true
+trail_lifetime = 0.18
+trail_sections = 2
+trail_section_subdivisions = 2
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+material = SubResource("CanvasItemMaterial_l2i3l")
+position = Vector2(3.01981e-13, -85)
+rotation = -1.5708
+scale = Vector2(5.78924, -6.8874)
+process_material = SubResource("ParticleProcessMaterial_eghkf")
+explosiveness = 0.5
+trail_enabled = true
+trail_lifetime = 0.18
+trail_sections = 2
+trail_section_subdivisions = 2
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+material = SubResource("CanvasItemMaterial_l2i3l")
+rotation = -1.5708
+scale = Vector2(18.8108, 15.1209)
+process_material = SubResource("ParticleProcessMaterial_eghkf")
+explosiveness = 0.5
+trail_enabled = true

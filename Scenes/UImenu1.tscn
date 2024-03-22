@@ -1,0 +1,108 @@
+[gd_scene load_steps=3 format=3 uid="uid://cots13gr2orfa"]
+
+[ext_resource type="FontFile" uid="uid://b4gholi3em2dk" path="res://Assets/BalsamiqSans-Bold.ttf" id="1_1fh4f"]
+[ext_resource type="Script" path="res://Scripts/UImenu1.gd" id="1_r0mty"]
+
+[node name="UImenu1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r0mty")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -515.0
+offset_top = -400.0
+offset_right = 1698.0
+offset_bottom = 1033.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 98.0
+offset_right = 913.0
+offset_bottom = 236.0
+scale = Vector2(1.56477, 1.56477)
+theme_override_colors/font_color = Color(0.2, 0.133333, 0.588235, 1)
+theme_override_colors/font_outline_color = Color(0.886275, 0.568627, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("1_1fh4f")
+theme_override_font_sizes/font_size = 66
+text = "Skyward Scramble"
+
+[node name="Button1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 243.0
+offset_right = 734.0
+offset_bottom = 323.0
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_fonts/font = ExtResource("1_1fh4f")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Button1"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 24.0
+offset_right = 322.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0.574777, 0.51315, 0.737114, 1)
+theme_override_colors/font_outline_color = Color(0.887534, 0.568817, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_1fh4f")
+theme_override_font_sizes/font_size = 32
+text = "Play The Game"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 335.0
+offset_right = 734.0
+offset_bottom = 415.0
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_fonts/font = ExtResource("1_1fh4f")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Button2"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 23.0
+offset_right = 373.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.574777, 0.51315, 0.737114, 1)
+theme_override_colors/font_outline_color = Color(0.887534, 0.568817, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_1fh4f")
+theme_override_font_sizes/font_size = 33
+text = "Options"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 427.0
+offset_right = 734.0
+offset_bottom = 507.0
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_fonts/font = ExtResource("1_1fh4f")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Button3"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 23.0
+offset_right = 360.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.574777, 0.51315, 0.737114, 1)
+theme_override_colors/font_outline_color = Color(0.887534, 0.568817, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_1fh4f")
+theme_override_font_sizes/font_size = 31
+text = "Quit Game"
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
