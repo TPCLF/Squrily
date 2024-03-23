@@ -58,7 +58,8 @@ func flash():
 func _on_fall_zone_body_entered(_body):
 	print(\"Player fell...\")
 	reload_needed = true
-	#call_deferred(\"_reload_scene\")
+	await get_tree().create_timer(2.0).timeout
+	call_deferred(\"_reload_scene\")
 
 func _reload_scene() -> void:
 	if reload_needed:
