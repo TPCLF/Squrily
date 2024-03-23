@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmxytr0hc0dpg"]
+[gd_scene load_steps=4 format=3 uid="uid://dmxytr0hc0dpg"]
+
+[ext_resource type="Script" path="res://Scenes/playparticlesonce.gd" id="1_cg667"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l2i3l"]
 particles_animation = true
@@ -20,13 +22,17 @@ sub_emitter_mode = 2
 sub_emitter_amount_at_end = 5
 
 [node name="Sparks" type="Node2D"]
+script = ExtResource("1_cg667")
+lifetime = 5.0
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 modulate = Color(1, 1, 0, 1)
 material = SubResource("CanvasItemMaterial_l2i3l")
 rotation = -1.5708
 scale = Vector2(10.1239, -10.2432)
+emitting = false
 process_material = SubResource("ParticleProcessMaterial_eghkf")
+one_shot = true
 explosiveness = 0.5
 trail_enabled = true
 trail_lifetime = 0.18
@@ -39,7 +45,9 @@ material = SubResource("CanvasItemMaterial_l2i3l")
 position = Vector2(3.01981e-13, -85)
 rotation = -1.5708
 scale = Vector2(5.78924, -6.8874)
+emitting = false
 process_material = SubResource("ParticleProcessMaterial_eghkf")
+one_shot = true
 explosiveness = 0.5
 trail_enabled = true
 trail_lifetime = 0.18
@@ -51,6 +59,8 @@ modulate = Color(1, 1, 0, 1)
 material = SubResource("CanvasItemMaterial_l2i3l")
 rotation = -1.5708
 scale = Vector2(18.8108, 15.1209)
+emitting = false
 process_material = SubResource("ParticleProcessMaterial_eghkf")
+one_shot = true
 explosiveness = 0.5
 trail_enabled = true
