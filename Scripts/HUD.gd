@@ -1,6 +1,15 @@
 extends CanvasLayer
 var nuts = 0
 var coins = 0
+static var Is_Mobile = false;
+
+func _enter_tree():
+	var osName = OS.get_name();
+	if osName == "Android":
+		Is_Mobile = true;
+	else:
+		Is_Mobile = false;
+
 
 func _process(_delta):
 	$CoinCounter/CoinCount.text = str(coins)
