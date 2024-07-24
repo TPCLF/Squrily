@@ -9,6 +9,7 @@ const SPEED = 600.0
 @export var Max_Speed = 600.0;
 @export var Min_Speed = 200.0;
 @export var Acceleration_Per_Second = 500.0;
+@export var Speed_Multiplier = 1.0;  #This by default is 100% and what the powerups should modify.  Set it to 2.0 to double speed, 0.5 to half speed.
 var currentXVelocity = 0.0;
 const JUMP_VELOCITY = -750.0
 
@@ -41,24 +42,24 @@ func _physics_process(delta):
 	if direction:
 		#velocity.x = direction * SPEED
 		if direction < 0.0:  #Moving left (By Davidi)
-			if currentXVelocity > -Min_Speed:
-				currentXVelocity = -Min_Speed;
-			currentXVelocity -= Acceleration_Per_Second * delta;
-			if currentXVelocity < -Max_Speed:
-				currentXVelocity = -Max_Speed;
+			if currentXVelocity > -Min_Speed * Speed_Multiplier:
+				currentXVelocity = -Min_Speed * Speed_Multiplier;
+			currentXVelocity -= Acceleration_Per_Second * Speed_Multiplier * delta;
+			if currentXVelocity < -Max_Speed * Speed_Multiplier:
+				currentXVelocity = -Max_Speed * Speed_Multiplier;
 		if direction > 0.0:  #Moving right (By Davidi)
-			if currentXVelocity < Min_Speed:
-				currentXVelocity = Min_Speed;
-			currentXVelocity += Acceleration_Per_Second * delta;
-			if currentXVelocity > Max_Speed:
-				currentXVelocity = Max_Speed;
+			if currentXVelocity < Min_Speed * Speed_Multiplier:
+				currentXVelocity = Min_Speed * Speed_Multiplier;
+			currentXVelocity += Acceleration_Per_Second * Speed_Multiplier * delta;
+			if currentXVelocity > Max_Speed * Speed_Multiplier:
+				currentXVelocity = Max_Speed * Speed_Multiplier;
 		velocity.x = currentXVelocity;
 		$AnimatedSprite2D.flip_h = direction < 0 
 		if is_on_floor():
 			$AnimatedSprite2D.play(\"walk\")
 	else:
 		if is_on_floor():
-			velocity.x = move_toward(velocity.x, 0, Acceleration_Per_Second * delta)
+			velocity.x = move_toward(velocity.x, 0, Acceleration_Per_Second * 2.0 * delta)
 			$AnimatedSprite2D.play(\"adle\")
 		elif not is_on_floor():
 			$AnimatedSprite2D.play(\"air\")
