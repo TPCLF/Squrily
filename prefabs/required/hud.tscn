@@ -1,0 +1,213 @@
+[gd_scene load_steps=21 format=3 uid="uid://4kkmsq8278rm"]
+
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_ho01p"]
+[ext_resource type="Script" path="res://Scripts/UImenu.gd" id="2_421te"]
+[ext_resource type="FontFile" uid="uid://b4gholi3em2dk" path="res://Assets/BalsamiqSans-Bold.ttf" id="3_eqy05"]
+[ext_resource type="Texture2D" uid="uid://ncbgwx0r3012" path="res://Assets/coin/gold_1.png" id="4_vf2v7"]
+[ext_resource type="Texture2D" uid="uid://bg7jow01xbjux" path="res://Assets/coin/gold_2.png" id="5_a60tn"]
+[ext_resource type="Texture2D" uid="uid://cb4gse2lx52i6" path="res://Assets/coin/gold_3.png" id="6_5bc6i"]
+[ext_resource type="Texture2D" uid="uid://2yjusfit2u7d" path="res://Assets/coin/gold_6.png" id="7_aq1la"]
+[ext_resource type="Texture2D" uid="uid://bcln112p2840w" path="res://Assets/coin/gold_5.png" id="8_k3020"]
+[ext_resource type="Texture2D" uid="uid://b3emtmr6uo40q" path="res://Assets/coin/gold_4.png" id="9_1xdfo"]
+[ext_resource type="Texture2D" uid="uid://bn16ruwx4x2hd" path="res://Assets/Blocks/ACORN.png" id="10_vvkbh"]
+[ext_resource type="Texture2D" uid="uid://ddandygbqg2gw" path="res://Assets/Blocks/CASHEW.png" id="11_qw0u8"]
+[ext_resource type="Texture2D" uid="uid://bjpxgrehhjn8m" path="res://Assets/Blocks/CORNNUT.png" id="12_jyxfs"]
+[ext_resource type="Texture2D" uid="uid://bs75bjirxxsbc" path="res://Assets/Blocks/PEACAN.png" id="13_5pbnp"]
+[ext_resource type="Texture2D" uid="uid://cmxqqoqsrfin0" path="res://Assets/Blocks/PEANUT.png" id="14_meqpy"]
+[ext_resource type="Texture2D" uid="uid://bgbfs18nnaw0w" path="res://Assets/Blocks/PUMPKIN.png" id="15_7d361"]
+[ext_resource type="Texture2D" uid="uid://g65aks0lyh6k" path="res://Assets/Blocks/SUNFLOWER.png" id="16_cxmqn"]
+[ext_resource type="Texture2D" uid="uid://ckcdx08uxyifa" path="res://Assets/Blocks/WALLNUT.png" id="17_rxdlx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3c4lp"]
+bg_color = Color(0, 0, 0, 0.462745)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_veioo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vf2v7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a60tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5bc6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aq1la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k3020")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1xdfo")
+}],
+"loop": true,
+"name": &"Spin",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgt8d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_vvkbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qw0u8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jyxfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5pbnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_meqpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7d361")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cxmqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rxdlx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ho01p")
+
+[node name="UImenu2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_421te")
+
+[node name="UIPanel" type="Panel" parent="UImenu2"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 1367.0
+offset_bottom = 855.0
+
+[node name="Button" type="Button" parent="UImenu2"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 304.0
+offset_right = 616.0
+offset_bottom = 344.0
+
+[node name="Label" type="Label" parent="UImenu2/Button"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 10.0
+offset_right = 197.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("3_eqy05")
+text = "Give UP"
+
+[node name="Button2" type="Button" parent="UImenu2"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 261.0
+offset_right = 616.0
+offset_bottom = 301.0
+
+[node name="Label" type="Label" parent="UImenu2/Button2"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 10.0
+offset_right = 180.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("3_eqy05")
+text = "Dont Give Up"
+
+[node name="CoinCounter" type="Panel" parent="."]
+offset_left = 37.0
+offset_top = 25.0
+offset_right = 140.0
+offset_bottom = 75.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3c4lp")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CoinCounter"]
+position = Vector2(23, 25)
+scale = Vector2(0.466908, 0.466908)
+sprite_frames = SubResource("SpriteFrames_veioo")
+animation = &"Spin"
+autoplay = "Spin"
+frame_progress = 0.495158
+
+[node name="Label" type="Label" parent="CoinCounter"]
+modulate = Color(1, 0.882353, 0.137255, 1)
+layout_mode = 0
+offset_left = 44.0
+offset_top = 15.0
+offset_right = 56.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_eqy05")
+theme_override_font_sizes/font_size = 21
+text = "X"
+
+[node name="CoinCount" type="Label" parent="CoinCounter"]
+modulate = Color(1, 0.882353, 0.137255, 1)
+layout_mode = 0
+offset_left = 58.0
+offset_top = 8.0
+offset_right = 100.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_eqy05")
+theme_override_font_sizes/font_size = 33
+text = "##"
+
+[node name="NutCounter" type="Panel" parent="."]
+offset_left = 153.0
+offset_top = 25.0
+offset_right = 256.0
+offset_bottom = 75.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3c4lp")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NutCounter"]
+position = Vector2(23, 25)
+scale = Vector2(0.906908, 0.906908)
+sprite_frames = SubResource("SpriteFrames_bgt8d")
+autoplay = "default"
+frame_progress = 0.34837
+
+[node name="Label" type="Label" parent="NutCounter"]
+modulate = Color(1, 0.882353, 0.137255, 1)
+layout_mode = 0
+offset_left = 44.0
+offset_top = 15.0
+offset_right = 56.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_eqy05")
+theme_override_font_sizes/font_size = 21
+text = "X"
+
+[node name="NutCount" type="Label" parent="NutCounter"]
+modulate = Color(1, 0.882353, 0.137255, 1)
+layout_mode = 0
+offset_left = 58.0
+offset_top = 8.0
+offset_right = 100.0
+offset_bottom = 48.0
+scale = Vector2(0.999045, 1.00485)
+theme_override_fonts/font = ExtResource("3_eqy05")
+theme_override_font_sizes/font_size = 33
+text = "##"
+
+[connection signal="pressed" from="UImenu2/Button" to="UImenu2" method="_on_button_pressed"]
+[connection signal="pressed" from="UImenu2/Button2" to="UImenu2" method="_on_button_2_pressed"]
