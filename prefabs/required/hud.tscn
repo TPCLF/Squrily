@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://4kkmsq8278rm"]
+[gd_scene load_steps=27 format=3 uid="uid://4kkmsq8278rm"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_ho01p"]
 [ext_resource type="Script" path="res://Scripts/UImenu.gd" id="2_421te"]
@@ -17,8 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://bgbfs18nnaw0w" path="res://Assets/Blocks/PUMPKIN.png" id="15_7d361"]
 [ext_resource type="Texture2D" uid="uid://g65aks0lyh6k" path="res://Assets/Blocks/SUNFLOWER.png" id="16_cxmqn"]
 [ext_resource type="Texture2D" uid="uid://ckcdx08uxyifa" path="res://Assets/Blocks/WALLNUT.png" id="17_rxdlx"]
+[ext_resource type="Script" path="res://Scripts/android_buttons.gd" id="18_n3l0s"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="18_qrrki"]
+[ext_resource type="Texture2D" uid="uid://d2l6lc3g8m7w7" path="res://Assets/UI/MoveButton1.png" id="19_hxu4m"]
 [ext_resource type="Texture2D" uid="uid://df7coax4fb1j4" path="res://Assets/UI/JumpButton.png" id="19_s0meb"]
+[ext_resource type="Texture2D" uid="uid://dmm5an3g5sl8n" path="res://Assets/UI/MoveButton2.png" id="20_ow3sr"]
 [ext_resource type="Texture2D" uid="uid://dpn1o08g4aw78" path="res://Assets/UI/JumpButton2.png" id="20_sihyi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3c4lp"]
@@ -214,6 +217,10 @@ theme_override_font_sizes/font_size = 33
 text = "##"
 
 [node name="Android Buttons" type="Node2D" parent="."]
+script = ExtResource("18_n3l0s")
+joystick_path = NodePath("Virtual Joystick")
+dpad_path = Array[NodePath]([NodePath("MoveRight"), NodePath("MoveLeft")])
+text_toggle_path = NodePath("Toggle DPad/Label")
 
 [node name="Virtual Joystick" parent="Android Buttons" instance=ExtResource("18_qrrki")]
 offset_top = 447.0
@@ -223,6 +230,19 @@ deadzone_size = 5.0
 clampzone_size = 37.0
 action_left = "ft"
 action_right = "rt"
+
+[node name="MoveRight" type="TouchScreenButton" parent="Android Buttons"]
+position = Vector2(153, 484)
+texture_normal = ExtResource("19_hxu4m")
+texture_pressed = ExtResource("20_ow3sr")
+action = "rt"
+
+[node name="MoveLeft" type="TouchScreenButton" parent="Android Buttons"]
+position = Vector2(121, 559)
+rotation = 3.14159
+texture_normal = ExtResource("19_hxu4m")
+texture_pressed = ExtResource("20_ow3sr")
+action = "ft"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Android Buttons"]
 position = Vector2(647, 445)
@@ -252,5 +272,26 @@ text = "Pause"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Toggle DPad" type="TextureButton" parent="Android Buttons"]
+offset_left = 57.0
+offset_top = 84.0
+offset_right = 207.0
+offset_bottom = 234.0
+texture_normal = ExtResource("19_s0meb")
+texture_pressed = ExtResource("20_sihyi")
+
+[node name="Label" type="Label" parent="Android Buttons/Toggle DPad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Bork"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="UImenu2/Button" to="UImenu2" method="_on_button_pressed"]
 [connection signal="pressed" from="UImenu2/Button2" to="UImenu2" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Android Buttons/Toggle DPad" to="Android Buttons" method="ToggleButton"]
