@@ -1,52 +1,20 @@
-[gd_scene load_steps=41 format=3 uid="uid://cgf75fnyy40d"]
+[gd_scene load_steps=19 format=3 uid="uid://cgf75fnyy40d"]
 
-[ext_resource type="PackedScene" uid="uid://dfjemxqerrc86" path="res://Scenes/plr1.tscn" id="1_b2w63"]
-[ext_resource type="Script" path="res://Scripts/anchor.gd" id="2_1qvw7"]
+[ext_resource type="PackedScene" uid="uid://b4hp6mgi7tvuf" path="res://prefabs/required/player_root.tscn" id="1_jxv1c"]
 [ext_resource type="PackedScene" uid="uid://ceye23kao6v60" path="res://Scenes/enemy.tscn" id="3_wor3v"]
-[ext_resource type="Script" path="res://Scripts/HUD.gd" id="4_ta343"]
-[ext_resource type="Texture2D" uid="uid://ncbgwx0r3012" path="res://Assets/coin/gold_1.png" id="5_kupsg"]
-[ext_resource type="Texture2D" uid="uid://bg7jow01xbjux" path="res://Assets/coin/gold_2.png" id="6_jvcyw"]
-[ext_resource type="Texture2D" uid="uid://cb4gse2lx52i6" path="res://Assets/coin/gold_3.png" id="7_f5v2h"]
-[ext_resource type="Texture2D" uid="uid://2yjusfit2u7d" path="res://Assets/coin/gold_6.png" id="8_tyk3j"]
-[ext_resource type="Texture2D" uid="uid://bcln112p2840w" path="res://Assets/coin/gold_5.png" id="9_0th63"]
 [ext_resource type="PackedScene" uid="uid://bonqhx4wpn28p" path="res://Scenes/blk3.tscn" id="10_4tkrl"]
-[ext_resource type="Texture2D" uid="uid://b3emtmr6uo40q" path="res://Assets/coin/gold_4.png" id="10_a37hy"]
-[ext_resource type="FontFile" uid="uid://b4gholi3em2dk" path="res://Assets/BalsamiqSans-Bold.ttf" id="11_1wep1"]
 [ext_resource type="PackedScene" uid="uid://dgfjrke70er1i" path="res://Scenes/blk4.tscn" id="11_71s3t"]
-[ext_resource type="Script" path="res://Scripts/UImenu.gd" id="11_ba362"]
 [ext_resource type="PackedScene" uid="uid://c8af7pvyk5t81" path="res://Scenes/light.tscn" id="12_qbkbk"]
 [ext_resource type="PackedScene" uid="uid://bjcdk8sikkcsw" path="res://Scenes/Coin.tscn" id="13_anl86"]
 [ext_resource type="PackedScene" uid="uid://dyu6m4nbrepdr" path="res://Scenes/oneWayPlat1.tscn" id="14_tdtem"]
 [ext_resource type="Script" path="res://Scenes/FallZone2.gd" id="15_7lhkq"]
+[ext_resource type="PackedScene" uid="uid://4kkmsq8278rm" path="res://prefabs/required/hud.tscn" id="15_q4mfp"]
 [ext_resource type="PackedScene" uid="uid://c5vjurr3nv2f7" path="res://Scenes/Plat6.tscn" id="15_qa4sb"]
 [ext_resource type="PackedScene" uid="uid://cjay7nmghft68" path="res://Scenes/Plat4.tscn" id="16_yndon"]
 [ext_resource type="PackedScene" uid="uid://cn38emoixpyq1" path="res://Scenes/blk1.tscn" id="17_cd4as"]
 [ext_resource type="PackedScene" uid="uid://c0lai0upxpqhr" path="res://Scenes/blk2.tscn" id="21_1gwa3"]
 [ext_resource type="PackedScene" uid="uid://cbe6d5dkrq5cn" path="res://Scenes/blk5.tscn" id="22_pyhk3"]
 [ext_resource type="PackedScene" uid="uid://d4fbjjhwx5tk6" path="res://Scenes/blk6.tscn" id="23_6kxaf"]
-[ext_resource type="Texture2D" uid="uid://bn16ruwx4x2hd" path="res://Assets/Blocks/ACORN.png" id="24_o5jhm"]
-[ext_resource type="Texture2D" uid="uid://ddandygbqg2gw" path="res://Assets/Blocks/CASHEW.png" id="25_57mms"]
-[ext_resource type="Texture2D" uid="uid://bjpxgrehhjn8m" path="res://Assets/Blocks/CORNNUT.png" id="26_doq7r"]
-[ext_resource type="Texture2D" uid="uid://bs75bjirxxsbc" path="res://Assets/Blocks/PEACAN.png" id="27_50bay"]
-[ext_resource type="Texture2D" uid="uid://cmxqqoqsrfin0" path="res://Assets/Blocks/PEANUT.png" id="28_oq6b8"]
-[ext_resource type="Texture2D" uid="uid://bgbfs18nnaw0w" path="res://Assets/Blocks/PUMPKIN.png" id="29_waxuv"]
-[ext_resource type="Texture2D" uid="uid://g65aks0lyh6k" path="res://Assets/Blocks/SUNFLOWER.png" id="30_cgm58"]
-[ext_resource type="Texture2D" uid="uid://ckcdx08uxyifa" path="res://Assets/Blocks/WALLNUT.png" id="31_n80ut"]
-
-[sub_resource type="Gradient" id="Gradient_x5c0t"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0.31759, 0.928339, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0.0112492, 0.0112492, 0.0112492, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xn003"]
-gradient = SubResource("Gradient_x5c0t")
-width = 1000
-height = 1000
-use_hdr = true
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-metadata/_snap_enabled = true
 
 [sub_resource type="Environment" id="Environment_yxeqo"]
 background_mode = 3
@@ -63,102 +31,10 @@ size = Vector2(1363, 132.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77giv"]
 size = Vector2(64, 2278)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3c4lp"]
-bg_color = Color(0, 0, 0, 0.462745)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_veioo"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_kupsg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_jvcyw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_f5v2h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_tyk3j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_0th63")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_a37hy")
-}],
-"loop": true,
-"name": &"Spin",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bgt8d"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("24_o5jhm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_57mms")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_doq7r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_50bay")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_oq6b8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_waxuv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_cgm58")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_n80ut")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="L1" type="Node2D"]
 position = Vector2(-8, 0)
 
-[node name="PlayerRoot" type="Node2D" parent="."]
-texture_filter = 1
-
-[node name="player2d" parent="PlayerRoot" instance=ExtResource("1_b2w63")]
-unique_name_in_owner = true
-position = Vector2(499, 165)
-collision_layer = 9
-collision_mask = 9
-
-[node name="PointLight2D" type="PointLight2D" parent="PlayerRoot/player2d"]
-position = Vector2(0, -4)
-color = Color(1, 1, 1, 0.568627)
-texture = SubResource("GradientTexture2D_xn003")
-
-[node name="anchor" type="Marker2D" parent="PlayerRoot"]
-gizmo_extents = 0.0
-script = ExtResource("2_1qvw7")
-
-[node name="Camera2D" type="Camera2D" parent="PlayerRoot/anchor"]
-texture_filter = 2
-process_callback = 0
-limit_left = -1000
-limit_top = -1000
-limit_right = 1000
-limit_bottom = 1000
-limit_smoothed = true
-position_smoothing_enabled = true
-editor_draw_limits = true
+[node name="PlayerRoot" parent="." instance=ExtResource("1_jxv1c")]
 
 [node name="Enemy" parent="." instance=ExtResource("3_wor3v")]
 position = Vector2(932, 620)
@@ -549,140 +425,7 @@ metadata/_edit_group_ = true
 position = Vector2(22, 1129)
 shape = SubResource("RectangleShape2D_77giv")
 
-[node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource("4_ta343")
+[node name="HUD" parent="." instance=ExtResource("15_q4mfp")]
 
-[node name="UImenu2" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("11_ba362")
-
-[node name="UIPanel" type="Panel" parent="HUD/UImenu2"]
-layout_mode = 0
-offset_left = -1.0
-offset_right = 1367.0
-offset_bottom = 855.0
-
-[node name="Button" type="Button" parent="HUD/UImenu2"]
-layout_mode = 0
-offset_left = 426.0
-offset_top = 304.0
-offset_right = 616.0
-offset_bottom = 344.0
-
-[node name="Label" type="Label" parent="HUD/UImenu2/Button"]
-layout_mode = 0
-offset_left = 65.0
-offset_top = 10.0
-offset_right = 197.0
-offset_bottom = 50.0
-theme_override_fonts/font = ExtResource("11_1wep1")
-text = "Give UP"
-
-[node name="Button2" type="Button" parent="HUD/UImenu2"]
-layout_mode = 0
-offset_left = 426.0
-offset_top = 261.0
-offset_right = 616.0
-offset_bottom = 301.0
-
-[node name="Label" type="Label" parent="HUD/UImenu2/Button2"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 10.0
-offset_right = 180.0
-offset_bottom = 50.0
-theme_override_fonts/font = ExtResource("11_1wep1")
-text = "Dont Give Up"
-
-[node name="CoinCounter" type="Panel" parent="HUD"]
-offset_left = 37.0
-offset_top = 25.0
-offset_right = 140.0
-offset_bottom = 75.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_3c4lp")
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HUD/CoinCounter"]
-position = Vector2(23, 25)
-scale = Vector2(0.466908, 0.466908)
-sprite_frames = SubResource("SpriteFrames_veioo")
-animation = &"Spin"
-autoplay = "Spin"
-frame_progress = 0.495158
-
-[node name="Label" type="Label" parent="HUD/CoinCounter"]
-modulate = Color(1, 0.882353, 0.137255, 1)
-layout_mode = 0
-offset_left = 44.0
-offset_top = 15.0
-offset_right = 56.0
-offset_bottom = 41.0
-theme_override_fonts/font = ExtResource("11_1wep1")
-theme_override_font_sizes/font_size = 21
-text = "X"
-
-[node name="CoinCount" type="Label" parent="HUD/CoinCounter"]
-modulate = Color(1, 0.882353, 0.137255, 1)
-layout_mode = 0
-offset_left = 58.0
-offset_top = 8.0
-offset_right = 100.0
-offset_bottom = 48.0
-theme_override_fonts/font = ExtResource("11_1wep1")
-theme_override_font_sizes/font_size = 33
-text = "##"
-
-[node name="NutCounter" type="Panel" parent="HUD"]
-offset_left = 153.0
-offset_top = 25.0
-offset_right = 256.0
-offset_bottom = 75.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_3c4lp")
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HUD/NutCounter"]
-position = Vector2(23, 25)
-scale = Vector2(0.906908, 0.906908)
-sprite_frames = SubResource("SpriteFrames_bgt8d")
-autoplay = "default"
-frame_progress = 0.34837
-
-[node name="Label" type="Label" parent="HUD/NutCounter"]
-modulate = Color(1, 0.882353, 0.137255, 1)
-layout_mode = 0
-offset_left = 44.0
-offset_top = 15.0
-offset_right = 56.0
-offset_bottom = 41.0
-theme_override_fonts/font = ExtResource("11_1wep1")
-theme_override_font_sizes/font_size = 21
-text = "X"
-
-[node name="NutCount" type="Label" parent="HUD/NutCounter"]
-modulate = Color(1, 0.882353, 0.137255, 1)
-layout_mode = 0
-offset_left = 58.0
-offset_top = 8.0
-offset_right = 100.0
-offset_bottom = 48.0
-scale = Vector2(0.999045, 1.00485)
-theme_override_fonts/font = ExtResource("11_1wep1")
-theme_override_font_sizes/font_size = 33
-text = "##"
-
-[connection signal="coin_collected" from="EnvObjects/Coins/Coin" to="HUD" method="_on_coin_coin_collected"]
-[connection signal="coin_collected" from="EnvObjects/Coins/Coin2" to="HUD" method="_on_coin_coin_collected"]
-[connection signal="coin_collected" from="EnvObjects/Coins/Coin3" to="HUD" method="_on_coin_coin_collected"]
-[connection signal="coin_collected" from="EnvObjects/Coins/Coin4" to="HUD" method="_on_coin_coin_collected"]
-[connection signal="coin_collected" from="EnvObjects/Coins/Coin5" to="HUD" method="_on_coin_coin_collected"]
-[connection signal="body_entered" from="EnvObjects/FallZone" to="PlayerRoot/player2d" method="_on_fall_zone_body_entered"]
 [connection signal="body_entered" from="EnvObjects/FallZone2" to="EnvObjects/FallZone2" method="_on_body_entered"]
-[connection signal="body_entered" from="EnvObjects/FallZone2" to="HUD" method="_on_fall_zone_2_body_entered"]
 [connection signal="body_exited" from="EnvObjects/FallZone2" to="EnvObjects/FallZone2" method="_on_body_exited"]
-[connection signal="pressed" from="HUD/UImenu2/Button" to="HUD/UImenu2" method="_on_button_pressed"]
-[connection signal="pressed" from="HUD/UImenu2/Button2" to="HUD/UImenu2" method="_on_button_2_pressed"]
