@@ -224,17 +224,31 @@ clampzone_size = 37.0
 action_left = "ft"
 action_right = "rt"
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Android Buttons"]
 position = Vector2(647, 445)
 texture_normal = ExtResource("19_s0meb")
 texture_pressed = ExtResource("20_sihyi")
 action = "ui_accept"
 
-[node name="Label" type="Label" parent="TouchScreenButton"]
+[node name="Label" type="Label" parent="Android Buttons/TouchScreenButton"]
 offset_right = 146.0
 offset_bottom = 148.0
 theme_override_font_sizes/font_size = 32
 text = "Jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pause Button" type="TouchScreenButton" parent="Android Buttons"]
+position = Vector2(647, 5)
+texture_normal = ExtResource("19_s0meb")
+texture_pressed = ExtResource("20_sihyi")
+action = "ui_cancel"
+
+[node name="Label" type="Label" parent="Android Buttons/Pause Button"]
+offset_right = 146.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 32
+text = "Pause"
 horizontal_alignment = 1
 vertical_alignment = 1
 

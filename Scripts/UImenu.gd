@@ -13,8 +13,10 @@ func toggle_menu():
 	menu_visible = !menu_visible # Toggle visibility
 	if menu_visible:
 		show()
+		Engine.time_scale = 0.0;
 	else:
 		hide()
+		Engine.time_scale = 1.0;
 func _on_button_pressed():
 	get_tree().paused = false
 	load_new_scene()
