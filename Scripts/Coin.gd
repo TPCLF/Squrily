@@ -13,5 +13,9 @@ func _on_body_entered(_body):
 		emit_signal("coin_collected")
 		#print("player body found!")
 
+func increase_coin_counter():
+	GameDataHolder.Data.Coins += 1;
+	SceneVars.CollectedCoins += 1;
+
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()

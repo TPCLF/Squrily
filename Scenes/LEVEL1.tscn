@@ -662,7 +662,7 @@ shape = SubResource("RectangleShape2D_xcmnk")
 
 [node name="FallZone2" type="Area2D" parent="EnvObjects"]
 position = Vector2(6, 991)
-collision_mask = 256
+collision_mask = 257
 script = ExtResource("15_7lhkq")
 metadata/_edit_group_ = true
 

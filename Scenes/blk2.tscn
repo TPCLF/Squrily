@@ -12,7 +12,7 @@ collision_layer = 256
 collision_mask = 269
 constant_torque = 23.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Blocks"]]
 texture_filter = 1
 scale = Vector2(3.12195, 3.28205)
 texture = ExtResource("1_4yluh")

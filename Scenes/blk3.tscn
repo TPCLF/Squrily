@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24xcp"]
 size = Vector2(128, 128.07)
 
-[node name="Blk" type="RigidBody2D"]
+[node name="Blk" type="RigidBody2D" groups=["Blocks"]]
 z_index = -1
 disable_mode = 1
 collision_layer = 256

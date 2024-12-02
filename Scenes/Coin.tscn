@@ -77,4 +77,5 @@ animation = &"Got"
 autoplay = "Spin"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="coin_collected" from="." to="." method="increase_coin_counter"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

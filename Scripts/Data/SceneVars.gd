@@ -15,6 +15,7 @@ var MaxEnemies = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameDataHolder.LoadFile();
 	CollectedBoxes = 0;
 	CollectedCoins = 0;
 	MaxCoins = get_tree().get_nodes_in_group("Coins").size();
