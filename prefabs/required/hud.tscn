@@ -221,11 +221,13 @@ text = "##"
 [node name="Android Buttons" type="Node2D" parent="."]
 script = ExtResource("18_n3l0s")
 joystick_path = NodePath("Virtual Joystick")
-dpad_path = Array[NodePath]([NodePath("MoveRight"), NodePath("MoveLeft")])
+dpad_path = Array[NodePath]([NodePath("MoveRight"), NodePath("MoveLeft"), NodePath("MoveDown")])
 text_toggle_path = NodePath("Toggle DPad/Label")
 
 [node name="Virtual Joystick" parent="Android Buttons" instance=ExtResource("18_qrrki")]
+offset_left = 32.0
 offset_top = 447.0
+offset_right = 332.0
 offset_bottom = 747.0
 scale = Vector2(0.5, 0.5)
 deadzone_size = 5.0
@@ -234,13 +236,20 @@ action_left = "ft"
 action_right = "rt"
 
 [node name="MoveRight" type="TouchScreenButton" parent="Android Buttons"]
-position = Vector2(153, 484)
+position = Vector2(153, 443)
 texture_normal = ExtResource("19_hxu4m")
 texture_pressed = ExtResource("20_ow3sr")
 action = "rt"
 
+[node name="MoveDown" type="TouchScreenButton" parent="Android Buttons"]
+position = Vector2(148, 523)
+rotation = 1.5708
+texture_normal = ExtResource("19_hxu4m")
+texture_pressed = ExtResource("20_ow3sr")
+action = "ui_down"
+
 [node name="MoveLeft" type="TouchScreenButton" parent="Android Buttons"]
-position = Vector2(121, 559)
+position = Vector2(73, 518)
 rotation = 3.14159
 texture_normal = ExtResource("19_hxu4m")
 texture_pressed = ExtResource("20_ow3sr")
@@ -279,6 +288,7 @@ offset_left = 57.0
 offset_top = 84.0
 offset_right = 207.0
 offset_bottom = 234.0
+focus_mode = 1
 texture_normal = ExtResource("19_s0meb")
 texture_pressed = ExtResource("20_sihyi")
 
