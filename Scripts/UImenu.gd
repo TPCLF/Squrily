@@ -22,6 +22,7 @@ func _on_button_pressed():
 	load_new_scene()
 func load_new_scene():
 	var scenetree = get_tree()
+	Engine.time_scale = 1.0;
 	var new_scene = "res://Scenes/UImenu1.tscn"
 	scenetree.change_scene_to_file(new_scene)
 	#print("scene loaded")
