@@ -20,12 +20,10 @@ run/delta_smoothing=false
 
 window/size/viewport_width=800
 window/size/viewport_height=600
-window/size/mode=3
 window/size/window_width_override=3840
 window/size/window_height_override=2160
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
-window/stretch/scale_mode="integer"
+window/stretch/aspect="keep_height"
 window/vsync/vsync_mode=0
 window/ios/suppress_ui_gesture=false
 
