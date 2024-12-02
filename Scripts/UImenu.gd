@@ -14,6 +14,7 @@ func toggle_menu():
 	if menu_visible:
 		show()
 		Engine.time_scale = 0.0;
+		get_node("Button2").grab_focus();
 	else:
 		hide()
 		Engine.time_scale = 1.0;

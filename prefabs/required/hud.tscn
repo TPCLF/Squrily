@@ -114,6 +114,7 @@ offset_left = 426.0
 offset_top = 304.0
 offset_right = 616.0
 offset_bottom = 344.0
+focus_neighbor_top = NodePath("../Button2")
 
 [node name="Label" type="Label" parent="UImenu2/Button"]
 layout_mode = 0
@@ -130,6 +131,7 @@ offset_left = 426.0
 offset_top = 261.0
 offset_right = 616.0
 offset_bottom = 301.0
+focus_neighbor_bottom = NodePath("../Button")
 
 [node name="Label" type="Label" parent="UImenu2/Button2"]
 layout_mode = 0

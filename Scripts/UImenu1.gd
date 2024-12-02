@@ -1,5 +1,8 @@
 extends Control
 
+func _ready() -> void:
+	get_node("Button1").grab_focus();
+
 func _on_button_1_pressed():
 	load_new_scene()
 	#print("Button1 is getting pressed")
