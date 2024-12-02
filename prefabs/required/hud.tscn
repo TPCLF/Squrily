@@ -288,7 +288,7 @@ offset_left = 57.0
 offset_top = 84.0
 offset_right = 207.0
 offset_bottom = 234.0
-focus_mode = 1
+focus_mode = 0
 texture_normal = ExtResource("19_s0meb")
 texture_pressed = ExtResource("20_sihyi")
 
