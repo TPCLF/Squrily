@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4k4unkd1puli"]
+
+[ext_resource type="Script" path="res://Scripts/Data/SceneVars.gd" id="1_vy22s"]
+
+[node name="SceneVars" type="Node2D"]
+script = ExtResource("1_vy22s")

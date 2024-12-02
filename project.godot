@@ -41,6 +41,12 @@ enabled=PackedStringArray("res://addons/camera_2d_plus/plugin.cfg", "res://addon
 
 import/blender/enabled=false
 
+[global_group]
+
+Coins=""
+Blocks=""
+Enemy=""
+
 [importer_defaults]
 
 animation_library={
