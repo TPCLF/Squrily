@@ -5,7 +5,6 @@ var collected = false
 @onready var hud = $"../../../HUD"
 
 func _on_body_entered(_body):
-	GameDataHolder.LoadFile();
 	if not collected:
 		collected = true
 		$AnimatedSprite2D.play("Got")
