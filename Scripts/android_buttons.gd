@@ -8,9 +8,13 @@ static var UseDpad = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#TODO: Get code to detect platform.  Hide this if not Android
-	UseDpad = !UseDpad;  #Running this twice so Toggle Button stays the same
-	ToggleButton();
+	var osName = OS.get_name();
+	if osName != "Android" && osName != "iOS":  #On the off chance we make this for iPhones later
+		visible = false;
+	else:
+		visible = true;
+		UseDpad = !UseDpad;  #Running this twice so Toggle Button stays the same
+		ToggleButton();
 
 
 func ToggleButton():
